@@ -1,0 +1,45 @@
+<?php 
+    $islogin=true;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevEnlight</title>
+    <link href="assets/style.css" reel="stylesheet"/>
+<body>
+    <header>
+        <div class="content">
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <?php if($islogin){ ?>
+
+                        <li> <a href="<?php echo getFullur("home")?>">home</a></li>
+                        <li><a href="<?php echo getFullur("about_p")?>">About Us</a></li>
+                        <li><a href="<?php echo getFullur("product_list")?>"> Product List</a></li>
+                        <li><a href="<?php echo getFullur("conatct")?>">Contact Us</a></li>
+                        
+                        <?php } else { ?>
+
+                        <li><a href="<?php echo getFullur("login")?>">Login</a></li>
+                        <li><a href="<?php echo getFullur("registration")?>">Registration</a></li>
+
+                        <?php } ?>
+                </ul>
+            </nav>
+        </div>
+
+    </header> 
+    <div class="container">
+        <div claass="content">
+            <!-- load page -->
+            <?php require $router->getloadPath();?>
+        </div>
+    </div>       
+</body>
+
+<footer>@Copyright reserved by Bappy22</footer>
+</html>
